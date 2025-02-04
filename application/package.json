@@ -1,0 +1,22 @@
+{
+  "name": "application",
+  "version": "1.0.0",
+  "description": "The server side of the website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lancinater/TravelWebsite.git"
+  },
+  "author": "Lancinater",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lancinater/TravelWebsite/issues"
+  },
+  "homepage": "https://github.com/Lancinater/TravelWebsite#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

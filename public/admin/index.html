@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin page</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+</head>
+
+<script src="../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+              <a class="navbar-brand" href="#">Travelator</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">About us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Contacts</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/admin">Admin</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="tel" placeholder="Phone Number" aria-label="Phone Number">
+                  <button class="btn btn-outline-primary text-nowrap" type="submit">Call Me</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="d-flex align-items-start">
+                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                  <button class="nav-link active" id="v-pills-Articles-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Articles" type="button" role="tab" aria-controls="v-pills-Articles" aria-selected="true">Home</button>
+                  <button class="nav-link" id="v-pills-Mails-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Mails" type="button" role="tab" aria-controls="v-pills-Mails" aria-selected="false">Mails</button>
+                  <button class="nav-link" id="v-pills-CallbackRequest-tab" data-bs-toggle="pill" data-bs-target="#v-pills-CallbackRequest" type="button" role="tab" aria-controls="v-pills-CallbackRequest" aria-selected="false">Callback Requests</button>
+                </div>
+                <div class="tab-content" id="v-pills-tabContent">
+                  <div class="tab-pane fade show active" id="v-pills-Articles" role="tabpanel" aria-labelledby="v-pills-Articles-tab" tabindex="0">Article</div>
+                  <div class="tab-pane fade" id="v-pills-Mails" role="tabpanel" aria-labelledby="v-pills-Mails-tab" tabindex="0">Mails</div>
+                  <div class="tab-pane fade" id="v-pills-CallbackRequest" role="tabpanel" aria-labelledby="v-pills-CallbackRequest-tab" tabindex="0">Callback Requests</div>
+                </div>
+              </div>
+        </div>
+    </main>
+</body>
+</html>
