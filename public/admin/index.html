@@ -8,6 +8,7 @@
 </head>
 
 <script src="../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 
 <body>
     <header class="mb-5">
@@ -47,21 +48,48 @@
             <hr>
             <div class="d-flex align-items-start">
                 <div class="nav flex-column nav-pills me-3 border rounded w-25 p-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                  <button class="nav-link active" id="v-pills-Articles-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Articles" type="button" role="tab" aria-controls="v-pills-Articles" aria-selected="true">Home</button>
+                  <button class="nav-link active" id="v-pills-Articles-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Articles" type="button" role="tab" aria-controls="v-pills-Articles" aria-selected="true">Articles</button>
                   <button class="nav-link" id="v-pills-Mails-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Mails" type="button" role="tab" aria-controls="v-pills-Mails" aria-selected="false">Mails</button>
                   <button class="nav-link" id="v-pills-CallbackRequest-tab" data-bs-toggle="pill" data-bs-target="#v-pills-CallbackRequest" type="button" role="tab" aria-controls="v-pills-CallbackRequest" aria-selected="false">Callback Requests</button>
+                  <button class="d-none nav-link" id="v-pills-addPost-tab" data-bs-toggle="pill" data-bs-target="#v-pills-addPost" type="button" role="tab" aria-controls="v-pills-addPost" aria-selected="false">Create Post</button>
                 </div>
                 <div class="tab-content border rounded w-75 p-3" id="v-pills-tabContent">
                   <div class="tab-pane fade show active" id="v-pills-Articles" role="tabpanel" aria-labelledby="v-pills-Articles-tab" tabindex="0">
-                    <button class="btn btn-primary">Add Post</button>
-                    <table class="table table-striped">
-                      <tr>
+                    <button class="add-post btn btn-primary">Add Post</button>
+                    <table class="articles-list table table-striped">
+                      <tbody>
                         
-                      </tr>
+                      </tbody>
                     </table>
                   </div>
                   <div class="tab-pane fade" id="v-pills-Mails" role="tabpanel" aria-labelledby="v-pills-Mails-tab" tabindex="0">Mails</div>
                   <div class="tab-pane fade" id="v-pills-CallbackRequest" role="tabpanel" aria-labelledby="v-pills-CallbackRequest-tab" tabindex="0">Callback Requests</div>
+                  <div class="tab-pane fade" id="v-pills-addPost" role="tabpanel" aria-labelledby="v-pills-addPost-tab" tabindex="0">
+                    <h2>Create Post</h2>
+                    <form>
+                      <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="title" aria-describedby="title" placeholder="Title">
+                      </div>
+                      <div class="mb-3">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" class="form-control" id="country" aria-describedby="country" placeholder="Country">
+                      </div>
+                      <div class="mb-3">
+                        <label for="image-URL" class="form-label">Image</label>
+                        <input type="url" class="form-control" id="imageURL" aria-describedby="image" placeholder="URL">
+                      </div>
+                      <div class="mb-3">
+                        <label for="image-file" class="form-label">or</label>
+                        <input type="file" class="form-control" id="image-file" aria-describedby="image-file">
+                      </div>
+                      <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" cols="30" rows="10" placeholder="Description of the place"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Create Post</button>
+                    </form>
+                  </div>
                 </div>
               </div>
         </div>
