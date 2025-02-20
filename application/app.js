@@ -8,6 +8,7 @@ let imageStorage = multer.diskStorage({
     filename: (req, file, cb) => cb(null, file.originalname)
     
 })
+let uniqID = require('uniqid');
 
 mongoose.connect('mongodb://localhost/travels');
 app.use(express.json());
@@ -20,7 +21,6 @@ app.get('/posts', async (req, resp) => {
 
 
 
-let id = 1;
 app.post('/posts', async (req, resp) => {
     let reqBody = req.body;
     let imagePath;
@@ -30,7 +30,7 @@ app.post('/posts', async (req, resp) => {
         imagePath = req.file.path.substring(req.file.path.indexOf('images'), req.file.path.length);
     }
     let newPost = new Post({
-        id: '' + id++,
+        id: uniqID(),
         title: reqBody.title,
         date: new Date(),
         description: reqBody.description,
