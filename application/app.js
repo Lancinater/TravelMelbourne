@@ -42,6 +42,11 @@ app.post('/posts', async (req, resp) => {
     resp.send('Post created');
 })
 
+app.delete('/posts/:id', async (req, resp) => {
+    await Post.deleteOne({id: req.params.id});
+    resp.send('Post deleted');
+})
+
 app.use(express.static('../public'));
 
 app.listen(3000, () => {
