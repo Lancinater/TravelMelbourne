@@ -1,0 +1,14 @@
+let mongoose = require('mongoose');
+let Schema = mongoose.Schema;
+
+let callbackRequestSchema = new Schema({
+    id: String,
+    phone: String,
+    date: Date
+})
+
+let CallbackRequest = mongoose.model('CallbackRequest', callbackRequestSchema);
+
+module.exports = {
+    CallbackRequest : CallbackRequest
+};

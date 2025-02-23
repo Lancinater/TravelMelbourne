@@ -4,6 +4,12 @@ async function getPosts() {
         .then((data) => data)
 }
 
+async function getCallbackRequests() {
+    return await fetch('http://localhost:3000/callbackRequests')
+        .then((response) => response.json())
+        .then((data) => data)
+}
+
 document.addEventListener('DOMContentLoaded', async function() {
     let posts = await getPosts();
     let articles = document.querySelector('.articles-list tbody'); 
