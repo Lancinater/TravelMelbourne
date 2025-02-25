@@ -4,6 +4,8 @@ async function getPosts() {
         .then((data) => data)
 }
 
+let callbackForm = document.querySelector('.callback-form');
+
 document.addEventListener('DOMContentLoaded', async function() {
     let posts = await getPosts();
     let articles = document.querySelector('.landmarks'); 
@@ -22,3 +24,19 @@ document.addEventListener('DOMContentLoaded', async function() {
         articles.insertAdjacentHTML('beforeend', postHTML);
     })
 })
+
+callbackForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    let phone = callbackForm.querySelector('input').value;
+    fetch('http://localhost:3000/callbackRequests', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            phone: phone
+        })
+    }).then(() => alert('We will call you back soon!'));
+
+})
+

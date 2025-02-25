@@ -9,17 +9,9 @@ let CallbackRequest = require('./models/callbackRequestModel').CallbackRequest;
 let imageStorage = multer.diskStorage({
     destination: (req, file, cb) => cb(null, '../public/images'),
     filename: (req, file, cb) => cb(null, file.originalname)
-    
 })
+
 let uniqID = require('uniqid');
-
-let newCallbackRequest = new CallbackRequest({
-    id: uniqID(),
-    phone: '1234567890',
-    date: new Date()
-});
-newCallbackRequest.save();
-
 
 mongoose.connect('mongodb://localhost/travels');
 app.use(express.json());
