@@ -70,12 +70,21 @@ callbackBlock.addEventListener('click', async function(e) {
         let removeBtn = e.target.closest('.remove-btn');
         if (removeBtn) {
             console.log('remove');
-            if (confirm("Are you sure you want to delete the post?")) {
+            if (confirm("Are you sure you want to delete the request?")) {
+                let row = removeBtn.closest('tr');
                 let id = removeBtn.closest('tr').querySelector('.id').value; 
-                await fetch(`http://localhost:3000/callbackRequests/${id}`, {
-                    method: 'DELETE'
-                }).then(response => response.text())
-                .then(() => window.location.reload());
+                try {
+                    let response = await fetch(`http://localhost:3000/callbackRequests/${id}`, {
+                        method: 'DELETE'
+                    });
+                    if (response.ok) {
+                        row.remove();
+                    }
+                } catch (error) {
+                    console.log("Error deleting callback request:", error);
+                    alert("An error occurred. Please try again.");
+                }
+                
             }
         }
 });
@@ -100,3 +109,31 @@ async function insertEmails(){
         emailList.insertAdjacentHTML('beforeend', emailHTML);
     })
 }
+
+
+let emailBlock = document.querySelector('.email-list');
+
+emailBlock.addEventListener('click', async function(e) {
+        let removeBtn = e.target.closest('.remove-btn');
+        if (removeBtn) {
+            console.log('remove');
+            if (confirm("Are you sure you want to delete the email?")) {
+                let id = removeBtn.closest('tr').querySelector('.id').value; 
+                let row = removeBtn.closest('tr');
+                try {
+                    let response = await fetch(`http://localhost:3000/emails/${id}`, {
+                        method: 'DELETE'
+                    });
+                    if (response.ok) {
+                        row.remove();
+                    } else {
+                        alert('Failed to delete the email');
+                    }
+                } catch (error) {
+                    console.error("Error deleting post:", error);
+                    alert("An error occurred. Please try again.");
+                }
+                
+            }
+        }
+});
