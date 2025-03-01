@@ -18,7 +18,7 @@
         }
     })
 
-    updateForm.addEventListener('submit', function(e) {
+    updateForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         let createDescription;
         if(updateText.value.indexOf('.') === -1) {
@@ -26,7 +26,7 @@
         }else{
             createDescription = updateText.value.substring(0, updateText.value.indexOf('.') + 1);
         }
-        fetch('http://localhost:3000/posts/' + id, {
+        await fetch('http://localhost:3000/posts/' + id, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

@@ -6,11 +6,20 @@
         if (removeBtn) {
             console.log('remove');
             if (confirm("Are you sure you want to delete the post?")) {
-                let id = removeBtn.closest('.post-item').querySelector('.id').value; 
-                await fetch(`http://localhost:3000/posts/${id}`, {
-                    method: 'DELETE'
-                }).then(response => response.text())
-                .then(() => window.location.reload());
+                let row = removeBtn.closest('tr');
+                let id = removeBtn.closest('tr').querySelector('.id').value; 
+                try {
+                    let response = await fetch(`http://localhost:3000/posts/${id}`, {
+                        method: 'DELETE'
+                    });
+                    if (response.ok) {
+                        row.remove();
+                    }
+                } catch (error) {
+                    console.log("Error deleting post:", error);
+                    alert("An error occurred. Please try again.");
+                }
+                
             }
         }
     });
