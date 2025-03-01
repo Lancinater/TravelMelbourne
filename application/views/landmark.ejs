@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
     <link rel="stylesheet" href="bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css">
-    
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" ></script>
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
 </head>
 <body>
     <header class="mb-4">
@@ -41,14 +44,16 @@
 
     <main>
         <div class="container shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-            <h1 class="text-center"><%= title %></h1>
+            <h1 class="text-center main-heading"><%= title %></h1>
             <hr>
             <img class="w-100 py-3 px-5" src="<%= imageURL %>" alt="<%= title %>">
             <hr>
             <p class="date fw-bold"><%= date %></p>
             <hr>
             <p class="text"><%= text %></p>
-            <div class="map"></div>
+            <div class="map" id="map" style="height: 400px;"></div>
         </div>
     </main>
+
+    <script src="/js/map.js"></script>
 </body>
