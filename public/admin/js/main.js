@@ -10,10 +10,16 @@ async function getCallbackRequests() {
         .then((data) => data)
 }
 
+async function getEmails() {
+    return await fetch('http://localhost:3000/emails')
+        .then((response) => response.json())
+        .then((data) => data)
+}
+
 document.addEventListener('DOMContentLoaded', async function() {
     insertPosts();
     insertCallbackRequests();
-
+    insertEmails();
     // Create new post
     let addPostBtn = document.querySelector('.add-post');
     let createPostBtn = document.querySelector('#v-pills-addPost-tab');
@@ -53,7 +59,7 @@ async function insertCallbackRequests(){
             <td class="date">${callbackRequest.date}</td>
             <td><button class="remove-btn btn btn-link p-0 text-decoration-none">X</button></td>
         </tr>
-        `;
+        `; 
         requestList.insertAdjacentHTML('beforeend', callbackRequestHTML);
     })
 }
@@ -73,3 +79,24 @@ callbackBlock.addEventListener('click', async function(e) {
             }
         }
 });
+
+
+async function insertEmails(){
+    let emails = await getEmails();
+    let emailList = document.querySelector('.email-list tbody'); 
+    emailList.innerHTML = '';
+    let i = 1;
+    emails.forEach((email) => {
+        let emailHTML = `
+        <tr>
+            <td>${i++}<input class="id" type="hidden" value="${email.id}"></td>
+            <td class="name">${email.name}</td>
+            <td class="email">${email.email}</td>
+            <td class="message">${email.message}</td>
+            <td class="date">${email.date}</td>
+            <td><button class="remove-btn btn btn-link p-0 text-decoration-none">X</button></td>
+        </tr>
+        `; 
+        emailList.insertAdjacentHTML('beforeend', emailHTML);
+    })
+}

@@ -40,3 +40,22 @@ callbackForm.addEventListener('submit', function(e) {
 
 })
 
+let emailForm = document.querySelector('.email-request-form');
+emailForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    let name = emailForm.querySelector('#name').value;
+    let email = emailForm.querySelector('#email').value;
+    let message = emailForm.querySelector('#message').value;
+    fetch('http://localhost:3000/emails', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            message: message
+        })
+    }).then((response) => response.text())
+    .then((data) => console.log(data));
+})
