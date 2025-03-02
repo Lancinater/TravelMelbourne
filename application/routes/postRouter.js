@@ -2,6 +2,7 @@ let express = require('express');
 let Post = require('../models/postModel').Post;
 let uniqID = require('uniqid');
 let router = express.Router();
+let authMiddleware = require('../middleware/roleAuth').roleAuth;
 
 // route for getting all the posts
 router.get('/', async (req, resp) => {
@@ -10,7 +11,7 @@ router.get('/', async (req, resp) => {
 })
 
 // route for creating a new post
-router.post('/', async (req, resp) => {
+router.post('/', authMiddleware, async (req, resp) => {
     let reqBody = req.body;
     let imagePath;
     if(reqBody.imageURL){
@@ -32,7 +33,7 @@ router.post('/', async (req, resp) => {
 })
 
 // route for deleting a post
-router.delete('/:id', async (req, resp) => {
+router.delete('/:id', authMiddleware, async (req, resp) => {
     await Post.deleteOne({id: req.params.id});
     resp.send('Post deleted');
 })
@@ -45,7 +46,7 @@ router.get('/:id', async (req, resp) => {
 })
 
 // route for updating a post
-router.put('/:id', async (req, resp) => {
+router.put('/:id', authMiddleware, async (req, resp) => {
     let id = req.params.id;
     await Post.updateOne({id: id}, req.body);
     resp.send('Post updated');

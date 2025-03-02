@@ -28,6 +28,8 @@ app.use('/posts', postRouter);
 app.use('/callbackRequests', callbackRouter);
 app.use('/emails', emailRouter);
 app.use('/users', userRouter);
+
+
 app.get('/landmark', async (req, resp)=>{
     let id = req.query.id;
     let post = await Post.findOne({id: id});

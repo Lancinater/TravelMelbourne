@@ -2,9 +2,10 @@ let express = require('express');
 let email = require('../models/emailModel').Email;
 let uniqID = require('uniqid');
 let router = express.Router();
+let authMiddleware = require('../middleware/roleAuth').roleAuth;
 
 // route for getting all emails
-router.get('/', async (req, resp) => {
+router.get('/', authMiddleware, async (req, resp) => {
     resp.send(await email.find());
 });
 
@@ -23,7 +24,7 @@ router.post('/', async (req, resp) => {
 })
 
 // route for deleting a callback request
-router.delete('/:id', async (req, resp) => {
+router.delete('/:id', authMiddleware, async (req, resp) => {
     await email.deleteOne({id: req.params.id});
     resp.send('Deleted');
 })
