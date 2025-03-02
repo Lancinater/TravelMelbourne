@@ -15,8 +15,9 @@ signInForm.addEventListener('submit', function(e){
     .then(result => {
         if(result === 'Success'){
             alert('Successfully logged in!');
+            window.location.href = 'http://localhost:3000/admin';
         } else {
-            alert('Failed to log in!');
+            alert('Password or email is incorrect!');
         }
     });
 });

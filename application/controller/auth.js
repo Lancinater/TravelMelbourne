@@ -6,7 +6,7 @@ function generateToken(user){
         email: user.email,
         password: user.password
     }
-    jwt.sign(payload, secret)
+    return jwt.sign(payload, secret)
 }
 
 function checkToken(token){
