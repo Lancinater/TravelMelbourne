@@ -34,6 +34,15 @@ app.get('/landmark', async (req, resp)=>{
     });
 })
 
+app.get('/admin', (req, resp) => {
+    resp.render('admin');
+})
+
+app.get('/login', (req, resp) => {
+    resp.render('login');
+})
+
+
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
