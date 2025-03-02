@@ -5,6 +5,7 @@ let multer = require('multer');
 let postRouter = require('./routes/postRouter');
 let callbackRouter = require('./routes/callbackRouter');
 let emailRouter = require('./routes/emailRouter');
+let userRouter = require('./routes/userRouter');
 let Post = require('./models/postModel').Post;
 app.set('view engine', 'ejs');
 
@@ -21,6 +22,7 @@ app.use(express.static('../public'));
 app.use('/posts', postRouter);
 app.use('/callbackRequests', callbackRouter);
 app.use('/emails', emailRouter);
+app.use('/users', userRouter);
 app.get('/landmark', async (req, resp)=>{
     let id = req.query.id;
     let post = await Post.findOne({id: id});
