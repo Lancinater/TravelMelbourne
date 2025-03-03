@@ -43,12 +43,13 @@ node app.js
 
 ## 📸 Screenshots
 ### Post Details
-![Image](https://github.com/user-attachments/assets/7e39c363-db48-476e-bde8-b029fc6a66ac)
+![Image](https://github.com/user-attachments/assets/00101574-dd86-42ba-ac4c-90e9c47b3ec9)
 
 ### Admin Login
-![Image](https://github.com/user-attachments/assets/24d92fff-2fa7-44a2-95b3-9b581d401e6b)
+![Image](https://github.com/user-attachments/assets/bdca4550-fb41-43b8-9208-611ae67ce50e)
+
 ### Contact Us Form
-![Image](https://github.com/user-attachments/assets/f2dd362d-c7b0-4df6-9d75-2379258431e5)
+![Image](https://github.com/user-attachments/assets/d0776b28-ce7f-4a11-aabf-ee94501f5f5e)
 
 ## 📜 License
 # This project is part of a personal portfolio and is not open for contributions at this time.
