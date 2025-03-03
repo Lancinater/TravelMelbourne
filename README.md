@@ -23,6 +23,7 @@ TravelMelbourne is a web application that provides information about Melbourne's
 - **Backend**: Node.js, Express, MongoDB
 - **Authentication & Security**: JWT, Cookies, Bcrypt
 
+```sh
 ## 💻 Installation & Setup
 
 # 1️⃣ Clone the repository
@@ -39,6 +40,7 @@ node app.js
 # Ensure you have MongoDB installed and running.
 # The application requires a MongoDB connection string.
 # Open a seperate terminal window and enter 'mongod' command to connect to the database
+```
 
 ## 📸 Screenshots
 ### Post Details
