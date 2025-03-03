@@ -25,7 +25,6 @@ TravelMelbourne is a web application that provides information about Melbourne's
 
 ## 💻 Installation & Setup
 
-```sh
 # 1️⃣ Clone the repository
 git clone https://github.com/yourusername/TravelMelbourne.git
 cd TravelMelbourne
